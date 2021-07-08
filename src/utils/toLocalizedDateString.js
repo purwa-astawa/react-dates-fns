@@ -15,7 +15,7 @@ export default function toLocalizedDateString(date, currentFormat, locale) {
       if (currentFormat) {
         newDate = parse(date, currentFormat, new Date());
         if (isValid(newDate)) {
-          return format(newDate, DISPLAY_FORMAT, { locale: getLocale(locale) });
+          return format(newDate, currentFormat, { locale: getLocale(locale) });
         }
       } else {
         newDate = parseISO(date);
@@ -31,9 +31,9 @@ export default function toLocalizedDateString(date, currentFormat, locale) {
   }
 
   if (isValid(date)) {
-    // if (currentFormat) {
-    //   return format(date, DISPLAY_FORMAT, { locale: getLocale(locale) });
-    // }
+    if (currentFormat) {
+      return format(date, currentFormat, { locale: getLocale(locale) });
+    }
     return format(date, DISPLAY_FORMAT, { locale: getLocale(locale) });
   }
 
