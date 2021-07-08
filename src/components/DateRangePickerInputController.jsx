@@ -287,7 +287,7 @@ export default class DateRangePickerInputController extends React.PureComponent 
     const displayFormat = this.getDisplayFormat();
     const { locale } = this.props;
     if (date && displayFormat) {
-      toLocalizedDateString(date, displayFormat, locale);
+      return toLocalizedDateString(date, displayFormat, locale);
     }
     return toLocalizedDateString(date, null, locale);
   }
