@@ -734,7 +734,7 @@ export default class DayPickerRangeController extends React.PureComponent {
 
         if (startDate && !endDate && focusedInput === END_DATE) {
           if (isAfterDay(hoverDate, startDate)) {
-            const endSpan = addDays(hoverDate, 1);
+            const endSpan = hoverDate;
             modifiers = this.deleteModifierFromRange(modifiers, startDate, endSpan, 'hovered-span');
           }
 
